@@ -2,23 +2,23 @@
 
 namespace JeffreyHosler\BodisApiWrapper\Resources;
 
-class Resource 
+class Resource
 {
-	/**
+    /**
      * The resource attributes.
      *
      * @var array
      */
     public $attributes;
 
-	/**
+    /**
      * The HTTP Client instance.
      *
      * @var Illuminate\Support\Facades\Http
      */
     protected $http;
 
-	/**
+    /**
      * Create a new resource instance.
      *
      * @param  array  $attributes
@@ -27,7 +27,7 @@ class Resource
     public function __construct(array $attributes, $http)
     {
         $this->attributes = $attributes;
-		$this->http = $http;
+        $this->http = $http;
 
         $this->set();
     }
@@ -45,7 +45,7 @@ class Resource
         }
     }
 
-	/**
+    /**
      * Convert the key name to camel case.
      *
      * @param  string  $key
@@ -63,5 +63,4 @@ class Resource
 
         return str_replace(' ', '', implode(' ', $parts));
     }
-
 }

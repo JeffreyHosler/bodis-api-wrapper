@@ -8,8 +8,8 @@ use JeffreyHosler\BodisApiWrapper\Endpoints\Folders;
 
 class Bodis
 {
-	use Domains,
-		Folders;
+    use Domains;
+    use Folders;
 
     /**
      * The api key
@@ -58,13 +58,13 @@ class Bodis
      */
     public function setClient($token = null)
     {
-		$this->http = Http::baseUrl(config('bodis.url'))
-			->withToken($token ?? config('bodis.token'))
-			->withHeaders([
-				'Content-Type' => 'application/json'
-			])
-			->timeout(30)
-			->retry(3, 100, throw: false);
+        $this->http = Http::baseUrl(config('bodis.url'))
+            ->withToken($token ?? config('bodis.token'))
+            ->withHeaders([
+                'Content-Type' => 'application/json',
+            ])
+            ->timeout(30)
+            ->retry(3, 100, throw: false);
 
         return $this;
     }
@@ -105,7 +105,7 @@ class Bodis
         return $this;
     }
 
-	/**
+    /**
      * Make a GET request
      *
      * @param  string  $uri
@@ -114,7 +114,7 @@ class Bodis
      */
     public function get($uri, array $payload = [])
     {
-		return $this->response('GET', $uri, $payload);
+        return $this->response('GET', $uri, $payload);
     }
 
     /**
@@ -126,7 +126,7 @@ class Bodis
      */
     public function post($uri, array $payload = [])
     {
-		return $this->response('POST', $uri, $payload);
+        return $this->response('POST', $uri, $payload);
     }
 
     /**
@@ -138,7 +138,7 @@ class Bodis
      */
     public function put($uri, array $payload = [])
     {
-		return $this->response('PUT', $uri, $payload);
+        return $this->response('PUT', $uri, $payload);
     }
 
     /**
@@ -150,11 +150,11 @@ class Bodis
      */
     public function delete($uri, array $payload = [])
     {
-		return $this->response('DELETE', $uri, $payload);
+        return $this->response('DELETE', $uri, $payload);
     }
 
     /**
-     * Handle the response 
+     * Handle the response
      *
      * @param  Illuminate\Support\Facades\Http  $response
      * @param  string  $uri
@@ -163,15 +163,13 @@ class Bodis
      */
     protected function response($method, $uri, $payload)
     {
-		$response = $this->http->$method($uri, $payload);
+        $response = $this->http->$method($uri, $payload);
 
-		/* failed response */
+        /* failed response */
         if ($response->failed()) {
-			throw new \Exception($response->json()['message']);
+            throw new \Exception($response->json()['message']);
         }
 
         return $response->json();
     }
-
-
 }

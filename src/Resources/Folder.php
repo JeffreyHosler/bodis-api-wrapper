@@ -6,19 +6,19 @@ class Folder extends Resource
 {
     /**
      * The id of the folder.
-	 * @var Int
+     * @var Int
      */
     public $id;
 
     /**
      * how many domains are in the folder.
-	 * @var Int
+     * @var Int
      */
     public $totalDomains;
 
     /**
      * The name of the folder.
-	 * @var String
+     * @var String
      */
     public $name;
 

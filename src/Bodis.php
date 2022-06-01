@@ -4,17 +4,26 @@ namespace JeffreyHosler\BodisApiWrapper;
 
 use Illuminate\Support\Facades\Http;
 use JeffreyHosler\BodisApiWrapper\Endpoints\Domains;
+use JeffreyHosler\BodisApiWrapper\Endpoints\ExternalMarkets;
 use JeffreyHosler\BodisApiWrapper\Endpoints\Folders;
+use JeffreyHosler\BodisApiWrapper\Endpoints\PaymentHistories;
+use JeffreyHosler\BodisApiWrapper\Endpoints\Reports;
+use JeffreyHosler\BodisApiWrapper\Endpoints\Tools;
+use JeffreyHosler\BodisApiWrapper\Endpoints\TopLevelDomains;
 
 class Bodis
 {
-    use Domains;
-    use Folders;
+    use Domains,
+		ExternalMarkets,
+    	Folders,
+		PaymentHistories,
+		Reports,
+		Tools,
+		TopLevelDomains;
 
     /**
      * The api key
-     *
-     * @var string
+	 * @var String
      */
     protected $token;
 
@@ -28,8 +37,8 @@ class Bodis
     /**
      * Create a new Bodis instance.
      *
-     * @param  string|null  $apiKey
-     * @param  Illuminate\Support\Facades\Http|null  $http
+     * @param  String|Null  $apiKey
+     * @param  Illuminate\Support\Facades\Http|Null  $http
      * @return void
      */
     public function __construct($token = null)
@@ -40,10 +49,10 @@ class Bodis
     /**
      * Transform the items of the collection to the given class.
      *
-     * @param  array  $collection
-     * @param  string  $class
-     * @param  array  $extraData
-     * @return array
+     * @param  Array  $collection
+     * @param  String  $class
+     * @param  Array  $extraData
+     * @return Array
      */
     protected function transformCollection($collection, $class, $extraData = [])
     {
@@ -53,7 +62,7 @@ class Bodis
     /**
      * Set the api key and setup the guzzle request object.
      *
-     * @param  string|null  $apiKey
+     * @param  String|Null  $apiKey
      * @return $this
      */
     public function setClient($token = null)
@@ -72,7 +81,7 @@ class Bodis
     /**
      * Set a new timeout.
      *
-     * @param  int  $timeout
+     * @param  Int  $timeout
      * @return $this
      */
     public function setTimeout($timeout)
@@ -85,7 +94,7 @@ class Bodis
     /**
      * Get the timeout.
      *
-     * @return int
+     * @return Int
      */
     public function getTimeout()
     {
@@ -95,7 +104,7 @@ class Bodis
     /**
      * Set a new retry.
      *
-     * @param  int  $timeout
+     * @param  Int  $timeout
      * @return $this
      */
     public function setRetries($retries, $milliseconds)
@@ -108,8 +117,8 @@ class Bodis
     /**
      * Make a GET request
      *
-     * @param  string  $uri
-     * @param  array  $payload
+     * @param  String  $uri
+     * @param  Array  $payload
      * @return mixed
      */
     public function get($uri, array $payload = [])
@@ -120,8 +129,8 @@ class Bodis
     /**
      * Make a POST request
      *
-     * @param  string  $uri
-     * @param  array  $payload
+     * @param  String  $uri
+     * @param  Array  $payload
      * @return mixed
      */
     public function post($uri, array $payload = [])
@@ -132,8 +141,8 @@ class Bodis
     /**
      * Make a PUT request
      *
-     * @param  string  $uri
-     * @param  array  $payload
+     * @param  String  $uri
+     * @param  Array  $payload
      * @return mixed
      */
     public function put($uri, array $payload = [])
@@ -144,8 +153,8 @@ class Bodis
     /**
      * Make a DELETE request
      *
-     * @param  string  $uri
-     * @param  array  $payload
+     * @param  String  $uri
+     * @param  Array  $payload
      * @return mixed
      */
     public function delete($uri, array $payload = [])
@@ -157,8 +166,8 @@ class Bodis
      * Handle the response
      *
      * @param  Illuminate\Support\Facades\Http  $response
-     * @param  string  $uri
-     * @param  array  $payload
+     * @param  String  $uri
+     * @param  Array  $payload
      * @return mixed
      */
     protected function response($method, $uri, $payload)

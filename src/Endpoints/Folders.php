@@ -18,7 +18,7 @@ trait Folders
         $response = $this->get("folders", $data);
 
         return array_merge($this->transformCollection(
-            $response['data'],
+            $response['data'] ?? [],
             Folder::class,
         ), array_filter($response, fn ($key) => $key != 'data', ARRAY_FILTER_USE_KEY));
     }
@@ -35,7 +35,7 @@ trait Folders
         $response = $this->post("folders", $data);
 
         return $this->transformCollection(
-            $response['data'],
+            $response['data'] ?? [],
             Folder::class,
         );
     }

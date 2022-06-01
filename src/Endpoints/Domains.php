@@ -32,7 +32,7 @@ trait Domains
         $response = $this->post("domains/search", $data);
 
         return array_merge($this->transformCollection(
-            $response['data'],
+            $response['data'] ?? [],
             Domain::class,
         ), array_filter($response, fn ($key) => $key != 'data', ARRAY_FILTER_USE_KEY));
     }

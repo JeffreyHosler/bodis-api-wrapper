@@ -5,13 +5,6 @@ namespace JeffreyHosler\BodisApiWrapper\Resources;
 class Resource
 {
     /**
-     * The resource attributes.
-     *
-     * @var array
-     */
-    public $attributes;
-
-    /**
      * The HTTP Client instance.
      *
      * @var Illuminate\Support\Facades\Http
@@ -26,10 +19,9 @@ class Resource
      */
     public function __construct(array $attributes, $http)
     {
-        $this->attributes = $attributes;
         $this->http = $http;
 
-        $this->set();
+        $this->set($attributes);
     }
 
     /**
@@ -37,9 +29,9 @@ class Resource
      *
      * @return void
      */
-    protected function set()
+    protected function set($attributes)
     {
-        foreach ($this->attributes as $key => $value) {
+        foreach ($attributes as $key => $value) {
             $key = $this->camelCase($key);
             $this->{$key} = $value;
         }

@@ -4,7 +4,11 @@
     "keywords": [
         "JeffreyHosler",
         "laravel",
-        "bodis-api-wrapper"
+        "bodis-api-wrapper",
+		"bodis",
+		"bodis api",
+		"laravel bodis",
+		"laravel bodis api"
     ],
     "homepage": "https://github.com/jeffreyhosler/bodis-api-wrapper",
     "license": "MIT",
@@ -34,7 +38,7 @@
                 "JeffreyHosler\\BodisApiWrapper\\BodisApiWrapperServiceProvider"
             ],
             "aliases": {
-                "BodisFacade": "JeffreyHosler\\BodisApiWrapper\\Facades\\BodisFacade"
+                "Bodis": "JeffreyHosler\\BodisApiWrapper\\Facades\\Bodis"
             }
         }
     },

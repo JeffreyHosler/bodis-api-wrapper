@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Http;
 use JeffreyHosler\BodisApiWrapper\Endpoints\Domains;
 use JeffreyHosler\BodisApiWrapper\Endpoints\ExternalMarkets;
 use JeffreyHosler\BodisApiWrapper\Endpoints\Folders;
-use JeffreyHosler\BodisApiWrapper\Endpoints\PaymentHistories;
+use JeffreyHosler\BodisApiWrapper\Endpoints\Payments;
 use JeffreyHosler\BodisApiWrapper\Endpoints\Reports;
 use JeffreyHosler\BodisApiWrapper\Endpoints\Tools;
 use JeffreyHosler\BodisApiWrapper\Endpoints\TopLevelDomains;
@@ -16,7 +16,7 @@ class Bodis
     use Domains,
 		ExternalMarkets,
     	Folders,
-		PaymentHistories,
+		Payments,
 		Reports,
 		Tools,
 		TopLevelDomains;
@@ -84,21 +84,11 @@ class Bodis
      * @param  Int  $timeout
      * @return $this
      */
-    public function setTimeout($timeout)
+    public function timeout($timeout)
     {
         $this->http->timeout($timeout);
 
         return $this;
-    }
-
-    /**
-     * Get the timeout.
-     *
-     * @return Int
-     */
-    public function getTimeout()
-    {
-        return $this->timeout;
     }
 
     /**
@@ -107,7 +97,7 @@ class Bodis
      * @param  Int  $timeout
      * @return $this
      */
-    public function setRetries($retries, $milliseconds)
+    public function retries($retries, $milliseconds)
     {
         $this->http->retry($retries, $milliseconds);
 

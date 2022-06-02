@@ -12,16 +12,9 @@ class BodisApiWrapperServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-    {
+    {	
         $this->publishes([
             __DIR__ . '/../config/bodis.php' => config_path('bodis.php'),
         ], 'config');
-    }
-
-    // public function configurePackage(Package $package): void
-    // {
-    //     $package
-    //         ->name('bodis-api-wrapper')
-    //         ->hasConfigFile('bodis');
-    // }
+	}
 }

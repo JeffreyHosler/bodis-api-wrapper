@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Domains &mdash; Bodis API Wrapper 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Folders" href="folders.html" />
+    <link rel="prev" title="Endpoints" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Bodis API Wrapper
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Endpoints</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Domains</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#search-domains">Search Domains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-domains">Add Domains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-domains">Update Domains</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="folders.html">Folders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_markets.html">External Markets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="payments.html">Payments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="top_level_domains.html">Top Level Domains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reports.html">Reports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html">Tools</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Bodis API Wrapper</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Endpoints</a> &raquo;</li>
+      <li>Domains</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/endpoints/domains.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="domains">
+<h1>Domains<a class="headerlink" href="#domains" title="Permalink to this heading">¶</a></h1>
+<p>Functions for the domains endpoint. See the <a class="reference external" href="https://docs.bodis.com/#b788b656-bf2d-4d4d-b6f4-445ad775a7a6">Official Documentation</a> for more information.</p>
+<section id="search-domains">
+<h2>Search Domains<a class="headerlink" href="#search-domains" title="Permalink to this heading">¶</a></h2>
+<p>Use this endpoint to search for domains within a Bodis account.</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nx">Bodis</span><span class="o">::</span><span class="na">searchDomains</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>You can pass any parameters listed in their documentation as an array.</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nx">Bodis</span><span class="o">::</span><span class="na">searchDomains</span><span class="p">([</span>
+<span class="linenos">2</span>   <span class="s1">&#39;page&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+<span class="linenos">3</span>   <span class="s1">&#39;per_page&#39;</span> <span class="o">=&gt;</span> <span class="mi">25</span>
+<span class="linenos">4</span>   <span class="s1">&#39;filters&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+<span class="linenos">5</span>      <span class="s1">&#39;domains&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+<span class="linenos">6</span>         <span class="s1">&#39;test.com&#39;</span>
+<span class="linenos">7</span>      <span class="p">]</span>
+<span class="linenos">8</span>   <span class="p">]</span>
+<span class="linenos">9</span><span class="p">]);</span>
+</pre></div>
+</div>
+<p>Domains returned will be an array of the Domain Resource: Example Response
+.. code-block:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;current_page&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">[</span>
+         <span class="mi">0</span> <span class="o">=&gt;</span> <span class="n">JeffreyHosler</span>\<span class="n">BodisApiWrapper</span>\<span class="n">Resources</span>\<span class="n">Domain</span> <span class="p">{</span>
+            <span class="o">+</span><span class="n">domainNameId</span><span class="p">:</span> <span class="mi">0000000</span>
+            <span class="o">+</span><span class="n">domainName</span><span class="p">:</span> <span class="s2">&quot;test.com&quot;</span>
+            <span class="o">+</span><span class="n">domainNameDisplay</span><span class="p">:</span> <span class="n">null</span>
+            <span class="o">+</span><span class="n">domainNameNoTld</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span>
+            <span class="o">+</span><span class="n">domainNameLength</span><span class="p">:</span> <span class="mi">4</span>
+            <span class="o">+</span><span class="n">tldName</span><span class="p">:</span> <span class="s2">&quot;.com&quot;</span>
+            <span class="o">+</span><span class="n">userId</span><span class="p">:</span> <span class="mi">0000</span>
+            <span class="o">+</span><span class="n">notes</span><span class="p">:</span> <span class="n">null</span>
+            <span class="o">+</span><span class="n">timeAddedToSystem</span><span class="p">:</span> <span class="s2">&quot;2020-11-18 00:59:51&quot;</span>
+            <span class="o">+</span><span class="n">timeAddedToUser</span><span class="p">:</span> <span class="s2">&quot;2020-11-18 00:59:51&quot;</span>
+            <span class="o">+</span><span class="n">isIdn</span><span class="p">:</span> <span class="s2">&quot;n&quot;</span>
+            <span class="o">+</span><span class="n">googleIsBanned</span><span class="p">:</span> <span class="s2">&quot;n&quot;</span>
+            <span class="o">+</span><span class="n">googleBannedReason</span><span class="p">:</span> <span class="n">null</span>
+            <span class="o">+</span><span class="n">isAdult</span><span class="p">:</span> <span class="s2">&quot;n&quot;</span>
+            <span class="o">+</span><span class="n">adProvider</span><span class="p">:</span> <span class="s2">&quot;G&quot;</span>
+            <span class="o">+</span><span class="n">imprint</span><span class="p">:</span> <span class="s2">&quot;false&quot;</span>
+            <span class="o">+</span><span class="n">zeroclickDisabled</span><span class="p">:</span> <span class="s2">&quot;false&quot;</span>
+            <span class="o">+</span><span class="n">isZeroclickBanned</span><span class="p">:</span> <span class="mi">0</span>
+            <span class="o">+</span><span class="n">preferredFeed</span><span class="p">:</span> <span class="n">null</span>
+            <span class="o">+</span><span class="n">preferredFeedLastChangedBy</span><span class="p">:</span> <span class="n">null</span>
+            <span class="o">+</span><span class="n">folderId</span><span class="p">:</span> <span class="mi">0</span>
+            <span class="o">+</span><span class="n">folderName</span><span class="p">:</span> <span class="s2">&quot;Test Folder&quot;</span>
+            <span class="o">+</span><span class="n">userSuggestKeywords</span><span class="p">:</span> <span class="s2">&quot;Test&quot;</span>
+            <span class="o">+</span><span class="n">userSuggestKeywordsConflictStatus</span><span class="p">:</span> <span class="s2">&quot;approved&quot;</span>
+            <span class="o">+</span><span class="n">userRsKeywords</span><span class="p">:</span> <span class="s2">&quot;Test, Folder, Test Folder&quot;</span>
+            <span class="o">+</span><span class="n">userRsKeywordsConflictStatus</span><span class="p">:</span> <span class="s2">&quot;approved&quot;</span>
+              <span class="p">}</span>
+           <span class="p">]</span>
+   <span class="s2">&quot;first_page_url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://api.bodis.com/v2/domains/search?page=1&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;from&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+   <span class="s2">&quot;next_page_url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://api.bodis.com/v2/domains/search?page=2&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;https://api.bodis.com/v2/domains/search&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;per_page&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+   <span class="s2">&quot;prev_page_url&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;to&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+   <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="mi">3106</span><span class="p">,</span>
+   <span class="s2">&quot;last_page&quot;</span><span class="p">:</span> <span class="mi">1553</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="add-domains">
+<h2>Add Domains<a class="headerlink" href="#add-domains" title="Permalink to this heading">¶</a></h2>
+<p>Use this endpoint to add new domains to a Bodis account.</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nx">Bodis</span><span class="o">::</span><span class="na">addDomains</span><span class="p">([</span>
+<span class="linenos"> 2</span>   <span class="s1">&#39;domains&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+<span class="linenos"> 3</span>      <span class="s1">&#39;test.com&#39;</span><span class="p">,</span>
+<span class="linenos"> 4</span>      <span class="s1">&#39;test2.com&#39;</span>
+<span class="linenos"> 5</span>   <span class="p">],</span>
+<span class="linenos"> 6</span>   <span class="s1">&#39;folder&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+<span class="linenos"> 7</span>      <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+<span class="linenos"> 8</span>      <span class="s1">&#39;apply_settings&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span>
+<span class="linenos"> 9</span>   <span class="p">]</span>
+<span class="linenos">10</span><span class="p">]);</span>
+</pre></div>
+</div>
+<p>The response will be a json response from Bodis that shows which domains succeeded and which ones failed</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;success&quot;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+      <span class="s2">&quot;example.com&quot;</span>
+   <span class="p">],</span>
+   <span class="s2">&quot;fail&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="s2">&quot;example.invalid&quot;</span><span class="o">:</span> <span class="s2">&quot;TLD extension is currently not supported.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;example.org&quot;</span><span class="o">:</span> <span class="s2">&quot;Domain name is already in your account.&quot;</span>
+   <span class="p">},</span>
+   <span class="s2">&quot;conflict&quot;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+      <span class="s2">&quot;example.net&quot;</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="update-domains">
+<h2>Update Domains<a class="headerlink" href="#update-domains" title="Permalink to this heading">¶</a></h2>
+<p>Use this endpoint to update domains within a Bodis account.</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nx">Bodis</span><span class="o">::</span><span class="na">updateDomains</span><span class="p">([</span>
+<span class="linenos"> 2</span>   <span class="s1">&#39;domains&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+<span class="linenos"> 3</span>      <span class="s1">&#39;test.com&#39;</span><span class="p">,</span>
+<span class="linenos"> 4</span>      <span class="s1">&#39;test2.com&#39;</span>
+<span class="linenos"> 5</span>   <span class="p">],</span>
+<span class="linenos"> 6</span>   <span class="s1">&#39;folder&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+<span class="linenos"> 7</span>      <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+<span class="linenos"> 8</span>      <span class="s1">&#39;apply_settings&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span>
+<span class="linenos"> 9</span>   <span class="p">],</span>
+<span class="linenos">10</span>   <span class="s1">&#39;parking&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+<span class="linenos">11</span>      <span class="s1">&#39;keywords&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+<span class="linenos">12</span>         <span class="s1">&#39;master_keywords&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+<span class="linenos">13</span>            <span class="s1">&#39;Test&#39;</span><span class="p">,</span>
+<span class="linenos">14</span>            <span class="s1">&#39;Test2&#39;</span>
+<span class="linenos">15</span>         <span class="p">],</span>
+<span class="linenos">16</span>         <span class="s1">&#39;related_search_terms&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+<span class="linenos">17</span>            <span class="s1">&#39;Testing&#39;</span><span class="p">,</span>
+<span class="linenos">18</span>            <span class="s1">&#39;Tester&#39;</span>
+<span class="linenos">19</span>         <span class="p">]</span>
+<span class="linenos">20</span>      <span class="p">]</span>
+<span class="linenos">21</span>   <span class="p">]</span>
+<span class="linenos">22</span><span class="p">]);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This endpoint does not return any content</p>
+</div>
+<p>Delete Domains</p>
+<p>Use this endpoint to delete domains from a Bodis account.</p>
+<hr class="docutils" />
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nx">Bodis</span><span class="o">::</span><span class="na">deleteDomains</span><span class="p">([</span>
+<span class="linenos">2</span>   <span class="s1">&#39;domains&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+<span class="linenos">3</span>      <span class="s1">&#39;test.com&#39;</span><span class="p">,</span>
+<span class="linenos">4</span>      <span class="s1">&#39;test2.com&#39;</span>
+<span class="linenos">5</span>   <span class="p">]</span>
+<span class="linenos">6</span><span class="p">]);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This endpoint does not return any content</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Endpoints" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="folders.html" class="btn btn-neutral float-right" title="Folders" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Jeff Hosler.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

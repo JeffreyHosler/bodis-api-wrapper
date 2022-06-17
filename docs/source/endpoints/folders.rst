@@ -1,0 +1,134 @@
+Folders
+=======
+Functions for the folders endpoint. See the `Official Documentation <https://docs.bodis.com/#da140e7f-ab86-4511-b544-77c424f0ff3f>`_ for more information.
+
+List Folders
+____________
+
+Use this endpoint to obtain a list of folders within a Bodis account.
+
+.. code-block:: php
+   :linenos:
+
+   Bodis::listFolders();
+
+You can pass any parameters listed in their documentation as an array. 
+
+
+.. code-block:: php
+   :linenos:
+
+   Bodis::listFolders();
+      'page' => 1,
+      'per_page' => 25
+   ]);
+
+Folders returned will be an array of the Folder Resource: Example Response
+
+.. code-block:: 
+   
+   'data' => [
+      0 => JeffreyHosler\BodisApiWrapper\Resources\Folder {
+         +id: 000
+         +totalDomains: 483
+         +name: 'Test Folder'
+      }
+      1 => JeffreyHosler\BodisApiWrapper\Resources\Folder {
+         +id: 001
+         +totalDomains: 12
+         +name: 'Test 2 Folder'
+      }
+   ]
+   'current_page' => 1
+   'first_page_url' => 'https://api.bodis.com/v2/folders?page=1'
+   'from' => 1
+   'last_page' => 1
+   'last_page_url' => 'https://api.bodis.com/v2/folders?page=3'
+   'next_page_url' => 'https://api.bodis.com/v2/folders?page=2'
+   'path' => 'https://api.bodis.com/v2/folders'
+   'per_page' => 25
+   'prev_page_url' => null
+   'to' => 25
+   'total' => 2
+
+
+Add Folder
+___________
+
+Use this endpoint to add new folders to a Bodis account.
+
+.. code-block:: php
+   :linenos:
+
+   Bodis::addFolder([
+      'name' => 'New Folder'
+   ]);
+
+Folders returned will be an array of the Folder Resource: Example Response
+
+.. code-block:: 
+   
+      JeffreyHosler\BodisApiWrapper\Resources\Folder {
+         'name' => 'New Folder',
+         'user_id' => 00000,
+         'id' => 0003
+      }
+     
+
+Update Folder
+_____________
+
+Use this endpoint to update folders within a Bodis account.
+
+.. code-block:: php
+   :linenos:
+
+   Bodis::updateFolder($id, [
+      'apply_settings' => false,
+      'parking' => [
+         'imprint' => false,
+         'zeroclick_disabled' => false,
+         'keywords' => [
+            'master_keywords' => [
+               'Video Games',
+               'Free Games'
+            ],
+            'related_search_terms' => [
+               'Play Free Games',
+               'Free Games Online'
+            ]
+         ]
+      ],
+      'sale' => [
+         'status' => 'NOT_FOR_SALE',
+         'url' => 'https://example.com/{DOMAIN_NAME}',
+         'price' => 1000,
+         'min_price' => 800,
+         'desktop_location' => 'TOP',
+         'desktop_custom_text' => '{DOMAIN_NAME} is for sale!',
+         'desktop_type' => 'BLEND_IN',
+         'mobile_location' => 'TOP',
+         'mobile_custom_text' => '{DOMAIN_NAME} is for sale and great for mobile!',
+         'mobile_type' => 'HIGHLIGHT',
+         'is_auto_redirect' => false,
+         'custom_inquiry_text' => 'Serious offers only, please.'
+      ]
+   ]);
+
+.. note::
+
+   This endpoint does not return any content
+
+Delete Folder
+_____________
+
+Use this endpoint to delete folders from a Bodis account.
+
+.. code-block:: php
+   :linenos:
+
+   Bodis::deleteDomains($id);
+
+.. note::
+
+   This endpoint does not return any content

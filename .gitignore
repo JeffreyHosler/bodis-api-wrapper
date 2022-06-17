@@ -16,3 +16,4 @@ node_modules
 
 # Sphinx documentation
 docs/_build/
+docs/build/

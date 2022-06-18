@@ -4,14 +4,13 @@
 
 This package provides a lightweight interface for interacting with Bodis's API
 
-## Official Documentation
-
-Documentation on the api can be found [here](https://docs.bodis.com/)
-
 ### How To Use
 
 Read the full documentation [here](https://jeffreyhosler.github.io/bodis-api-wrapper/index.html)
 
+## Bodis Documentation
+
+Documentation on the api can be found [here](https://docs.bodis.com/)
 
 ## Contributing
 

@@ -147,10 +147,9 @@ Use this endpoint to update domains within a Bodis account.
    This endpoint does not return any content
 
 Delete Domains
+______________
 
 Use this endpoint to delete domains from a Bodis account.
-
-______________
 
 .. code-block:: php
    :linenos:

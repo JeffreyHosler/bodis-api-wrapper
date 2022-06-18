@@ -127,7 +127,7 @@ Use this endpoint to delete folders from a Bodis account.
 .. code-block:: php
    :linenos:
 
-   Bodis::deleteDomains($id);
+   Bodis::deleteFolder($id);
 
 .. note::
 
